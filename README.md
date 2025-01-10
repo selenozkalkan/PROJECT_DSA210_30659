@@ -1,50 +1,59 @@
-# PROJECT_DSA210_30659
+# PROJECT_DSA210_30659  
 
-# Spotify Listening Pattern Analysis
+# Spotify Listening Pattern Analysis  
 
-## **Project Overview**
-This project analyzes my Spotify listening patterns to uncover the frequency of musing listenning and how my music preferences change during exams compared to regular times. I will focus on identifying trends that reveal potential links between music and focus.
+## **Project Overview**  
+This project explores my Spotify listening patterns to analyze changes in listening frequency and behavior during exam periods compared to regular times. By leveraging personal playback data and a detailed exam schedule, the study aims to identify trends that reveal how external events like exams impact music-listening habits.  
 
-## **Additional Features**
-The features I will analyze include:
-- **Listening Frequency**: The number of songs played during specific time periods.
-- **Genres**: Dominant music genres during exams versus regular times.
+## **Key Features Analyzed**  
+- **Listening Frequency**: Analyzing the playback trends to determine whether listening habits increase or decrease during exams.  
+- **Playback Trends**: Understanding daily playback durations during exam periods and identifying significant shifts.  
 
-## **Dataset**
-- **Source**: My personal Spotify listening history data. I will retrieve this data using Spotify's data request feature and the exam schedule data.
-- **Data Content**: The dataset will include timestamps, track information (song names, artists, genres), and playback details.
-- **Time Frame**: Focused on the periods during exams and non-exam times for meaningful comparisons.
+## **Dataset**  
+- **Source**: Personal Spotify listening history data obtained via Spotify's data export feature, combined with manually created exam schedule data.  
+- **Data Content**: The dataset includes playback timestamps, playback durations (in milliseconds), and metadata (e.g., song names, artists, albums).  
+- **Time Frame**: The analysis focuses on playback data from **2024**, ensuring meaningful comparisons between exam and non-exam periods.  
 
-## **Project Idea**
-The goal is to investigate:
-1. Changes in **listening frequency** during exams versus regular times.
-2. **Genre preferences** or specific artists that dominate during exams.
+## **Project Goals**  
+The main objectives of the project are to:  
+1. Investigate **daily playback trends** during exam periods compared to non-exam periods.  
+2. Statistically test whether playback time increases or decreases during exams.  
 
-## **Project Plan**
-1. **Data Collection**
-   - Obtain Spotify listening data from the Spotify data export feature.
-   - Obtain exam schedule data
-   - Clean and preprocess the data, ensuring relevant fields are extracted (e.g., timestamps, genres, artists).
+## **Project Plan**  
 
-2. **Data Exploration**
-   - Perform exploratory data analysis (EDA) to understand overall listening habits and key trends.
-   - Identify the exam periods and label the data accordingly.
+1. **Data Collection**  
+   - **Spotify Data**: Retrieved using Spotify's data export feature.  
+   - **Exam Schedule Data**: Manually created to include the start and end dates of all 2024 exam periods.  
+   - Combined both datasets for integrated analysis, with timestamps used to align playback trends with exam schedules.  
 
-3. **Data Analysis**
-   - Compare metrics: listening frequency, genres between exam and regular times.
-   - Visualize findings using time-series plots, bar charts, and word clouds.
+2. **Data Preprocessing**  
+   - Filtered Spotify playback data to focus solely on 2024.  
+   - Aggregated playback durations into **daily playback trends** (in minutes).  
+   - Filled missing dates with zero playback to maintain temporal continuity.  
+   - Labeled each day as an **exam period** or **non-exam period** based on the exam schedule.  
 
-4. **Findings and Interpretation**
-   - Summarize insights on how listening habits vary during exams and what this might reveal about mood and stress management.
-## **Techniques**
-The techniques I will use for this project include:
-- **Data Cleaning**: Preprocessing raw Spotify data to extract relevant features and handle missing or inconsistent values.
-- **Exploratory Data Analysis (EDA)**: Identifying trends and patterns in the dataset using statistical summaries and visualizations.
-- **Data Visualization**: Creating insightful visual representations of the data, such as:
-  - Time-series plots to analyze listening frequency over time.
-  - Bar charts and pie charts to compare genre distributions.
-  - Word clouds to showcase dominant artists or songs.
-- **Statistical Analysis**: Comparing features (e.g., energy levels, song durations) between exam and regular periods to identify significant differences.
-- **Programming Tools**: Using Python and libraries like `pandas`, `matplotlib`, `seaborn`, and `plotly` for data processing and visualization.
+3. **Data Analysis**  
+   - Created a time-series chart highlighting daily playback trends with exam periods marked.  
+   - Segmented playback data into two groups: exam periods and non-exam periods.  
+   - Performed statistical tests to compare playback trends between these groups.  
 
+4. **Findings**  
+   - Daily playback was significantly higher during exam periods, with an average playback time of **158.12 minutes** during exams compared to **47.42 minutes** during non-exam periods.  
+   - Statistical testing (Welch's t-test and Mann-Whitney U test) confirmed this difference was highly significant (p-value < 0.0001).  
 
+## **Techniques and Tools Used**  
+The techniques and tools used in this project include:  
+- **Data Cleaning and Preprocessing**:  
+  - Processed JSON files to extract playback timestamps and playback durations.  
+  - Integrated and synchronized playback data with exam period information.  
+- **Exploratory Data Analysis (EDA)**:  
+  - Aggregated playback data into daily trends and visualized these trends with time-series plots.  
+- **Statistical Analysis**:  
+  - Performed hypothesis testing (Welch's t-test and Mann-Whitney U test) to compare playback activity during exam and non-exam periods.  
+- **Visualization**:  
+  - Used `plotly` to create an interactive time-series chart with exam periods highlighted.  
+- **Programming Tools**:  
+  - Python was the primary language, with libraries such as `pandas`, `numpy`, `matplotlib`, `plotly`, and `scipy`.  
+
+## **Findings and Interpretation**  
+The results of the project revealed a clear increase in playback activity during exam periods, suggesting that external stress-inducing events like exams significantly impact music-listening habits.  
